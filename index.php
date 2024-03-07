@@ -1,3 +1,19 @@
+<?php
+session_start();
+
+// Display success message
+if (isset($_SESSION['success_message'])) {
+    echo '<div class="alert alert-success" role="alert">' . $_SESSION['success_message'] . '</div>';
+    unset($_SESSION['success_message']); // Clear the session variable
+}
+
+// Display error message
+if (isset($_SESSION['error_message'])) {
+    echo '<div class="alert alert-danger" role="alert">' . $_SESSION['error_message'] . '</div>';
+    unset($_SESSION['error_message']); // Clear the session variable
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
